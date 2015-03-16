@@ -29,25 +29,34 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       }
     },
-    imagemin: {                          // Task
-        options: {                       // Target options
-            optimizationLevel: 7
-        },
-        files: {                         // Dictionary of files
+    imagemin: {
+
+        static: {// Task
+            options: {                       // Target options
+                optimizationLevel: 7,
+                use: [mozjpeg()]
+            },
             files: [{
-                expand: true,                  // Enable dynamic expansion
-                cwd: 'img_orig/',                   // Src matches are relative to this path
-                src: ['*.{png,jpg,gif}'],   // Actual patterns to match
-                dest: 'img/'                  // Destination path prefix
-              },
-                {
-                expand: true,                  // Enable dynamic expansion
-                cwd: 'views_orig/images',                   // Src matches are relative to this path
-                src: ['*.{png,jpg,gif}'],   // Actual patterns to match
-                dest: 'views/images/'                  // Destination path prefix
-              }
-            ]
-        }
+                    expand: true,                  // Enable dynamic expansion
+                    cwd: 'img_orig/',                   // Src matches are relative to this path
+                    src: ['*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'img/'                  // Destination path prefix
+                }
+                ]
+        },
+        static_pizza: {// Task
+                options: {                       // Target options
+                optimizationLevel: 7,
+                use: [mozjpeg()]
+            },
+                files: [{
+                    expand: true,                  // Enable dynamic expansion
+                    cwd: 'views_orig/images/',                   // Src matches are relative to this path
+                    src: ['*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'views/images/'                  // Destination path prefix
+                }
+                ]
+            }
     },
 
     // Before generating any new files, remove any previously-created files.
