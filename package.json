@@ -1,0 +1,22 @@
+{
+  "name": "front-end-optimization",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-closure-compiler": "0.0.21",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-htmlmin": "^0.4.0",
+    "grunt-contrib-imagemin": "^0.9.3",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-requirejs": "^0.4.2",
+    "grunt-uncss": "^0.4.1",
+    "imagemin-mozjpeg": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filintod/frontend-nanodegree-mobile-portfolio"
+  }
+}
