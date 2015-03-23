@@ -19,16 +19,6 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'js/*.js',
-          'views/js/*.js'
-      ],
-      options: {
-        jshintrc: '.jshintrc'
-      }
-    },
     imagemin: {
 
         static: {// Task
@@ -67,6 +57,26 @@ module.exports = function(grunt) {
             files: {'views/js/main.js': ['views_orig/js/main.js']}
         }
       },
+      htmlmin: {
+          main: {
+              options: {                                 // Target options
+                  removeComments: true,
+                  collapseWhitespace: true
+              },
+              files: {                                   // Dictionary of files
+                  'index.html': 'index_orig.html'     // 'destination': 'source'
+              }
+          },
+          views: {
+              options: {                                 // Target options
+                  removeComments: true,
+                  collapseWhitespace: true
+              },
+              files: {                                   // Dictionary of files
+                  'views/pizza.html': 'views_orig/pizza.html'     // 'destination': 'source'
+              }
+          }
+      },
 
     // Before generating any new files, remove any previously-created files.
     clean: {
@@ -75,11 +85,11 @@ module.exports = function(grunt) {
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'imagemin', 'uglify']);
+  grunt.registerTask('default', ['imagemin', 'uglify', 'htmlmin']);
 
 };
