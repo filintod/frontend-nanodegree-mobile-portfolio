@@ -1,14 +1,3 @@
-/**
- * Created by duran on 3/16/2015.
- */
-/*
- * grunt-contrib-concat
- * http://gruntjs.com/
- *
- * Copyright (c) 2015 "Cowboy" Ben Alman, contributors
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 var mozjpeg = require('imagemin-mozjpeg');
